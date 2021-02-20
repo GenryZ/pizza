@@ -1,8 +1,10 @@
 function something()
 {
-	var x = window.localStorage.getItem('aaa');
+	var x = window.localStorage.getItem('bbb'); // получаем значение из localStorage
 
-	window.localStorage.setItem('aaa', 555);
-	
+	x = x * 1 + 1;								// увеличиваем это значение на 1
+
+	window.localStorage.setItem('bbb', x);		// устанавливаем значение ключа
+
 	alert(x);
 }
