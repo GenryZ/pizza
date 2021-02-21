@@ -1,18 +1,28 @@
-<h1>Welcom to pizza</h1>
-<button class="btn btn-primary" onclick="something()">Click me</button>
-<h1>hello</h1>
-<div class="row">
-<% @products.each do |p| %>
-  <div class="col-xs-6 col-md-4">
- 	<div>
-  	<img src="<%=p.path_to_image%>">
-  	</div>
-  	<div>
-  	<%=p.title%>
-  	<%=p.price%>
-  </div>
-  <button type="button" class="btn btn-success">Success</button>
-  </div>
- <% end %>
- </div>
+<h1>Welcome to pizza</h1>
 
+
+<div class="row">
+
+<% @products.each do |p| %>
+
+<div class="col-xs-12 col-md-4">
+	<div>
+	<%=p.title%>
+	</div>
+	<div>
+	<img src="<%=p.path_to_image%>">
+	</div>
+	<div>
+	<%=p.description%>
+	</div>
+	<div>
+		Price
+	<%=p.price%>
+	</div>
+</div>
+
+<% end %>
+
+</div>
+
+<button type="button" class="btn btn-success">Success</button>
