@@ -1,2 +1,2 @@
-# sinatra-bootstrap-clean
+# pizza shop
 sinatra bootstrap for learning
