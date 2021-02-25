@@ -22,12 +22,20 @@ function add_to_cart(id)
 
 	// вывод окошка с количеством заказанной пиццы
 	update_orders_input();
+	update_orders_button();
 
 }
 function update_orders_input() //функция добавления в форму корзины
 {
 	var orders = cart_get_orders();
 	$('#orders_input').val(orders);
+
+}
+function update_orders_button() //добавление надписи на кнопку 
+{
+	var text = 'Корзина (' + cart_get_number_of_items() + ')';
+	$('#orders_button').val(text);
+
 
 }
 
