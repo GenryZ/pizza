@@ -19,6 +19,7 @@ function add_to_cart(id)
 
 	window.localStorage.setItem(key, x);
 
+	// вывод окошка с количеством заказанной пиццы
 	alert('Items in your cart: ' + cart_get_number_of_items());
 
 }
