@@ -1,3 +1,4 @@
+
 function something()
 {
 	var x = window.localStorage.getItem('bbb'); // получаем значение из localStorage
@@ -23,7 +24,7 @@ function add_to_cart(id)
 	update_orders_input();
 
 }
-function update_orders_input()
+function update_orders_input() //функция добавления в форму корзины
 {
 	var orders = cart_get_orders();
 	$('#orders_input').val(orders);
