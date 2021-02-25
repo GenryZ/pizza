@@ -20,7 +20,13 @@ function add_to_cart(id)
 	window.localStorage.setItem(key, x);
 
 	// вывод окошка с количеством заказанной пиццы
-	alert('Items in your cart: ' + cart_get_number_of_items());
+	update_orders_input();
+
+}
+function update_orders_input()
+{
+	var orders = cart_get_orders();
+	$('#orders_input').val(orders);
 
 }
 
@@ -39,4 +45,20 @@ var cnt = 0;
 	}
 
 	return cnt;
+}
+function cart_get_orders() {
+
+var orders = '' ;
+
+	for(var i = 0; i < window.localStorage.length; i++)
+	{
+		var key = window.localStorage.key(i); // получаем ключ
+		var value = window.localStorage.getItem(key); // получаем значение в руби hh[key] = value
+		if(key.indexOf('product_') == 0)
+		{
+			orders = orders + key + '=' + value + ',';
+		}
+	}
+
+	return orders;
 }
