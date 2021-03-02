@@ -47,5 +47,17 @@
     		<textarea name="order[address]" type="text" class="form-control" ></textarea>
     	</div>
     	<button type="submit" class="btn btn-success">Place this order</button>
-      <button  class="btn btn-danger" onclick="alert('aaa');return false;">Cancel order</button>
+      <button type="submit" class="btn btn-danger" onclick="return cancel_order();">Cancel order</button>
     </form>
+     
+     <script type="text/javascript">
+       function cancel_order() {
+        window.localStorage.clear();
+
+        update_orders_input();
+    update_orders_button();
+    
+        return false;
+      }
+    
+     </script>
