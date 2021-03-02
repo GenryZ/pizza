@@ -6,7 +6,7 @@ require 'sinatra/reloader'
 
 set :database, {adapter:"sqlite3", database:"pizza.db"}
 
-class Product < ActiveRecord::Base
+class Product < ActiveRecord::Base #model
 end
 
 class Order < ActiveRecord::Base
@@ -16,7 +16,7 @@ get '/' do
 	erb :index
 end
 
-get '/about' do 
+get '/about' do # controller
 	erb :about
 end
 post '/place_order' do
@@ -42,7 +42,7 @@ post '/cart' do
 	erb :cart
 end
 
-def parse_orders_input orders_input
+def parse_orders_input orders_input #helper
 	s1 = orders_input.split(/,/)
 	arr = []	
  	s1.each do |x|
