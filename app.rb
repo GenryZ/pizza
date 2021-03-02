@@ -9,6 +9,8 @@ set :database, {adapter:"sqlite3", database:"pizza.db"}
 class Product < ActiveRecord::Base
 end
 
+class Order < ActiveRecord::Base
+end
 get '/' do 
 	@products = Product.all 
 	erb :index
@@ -16,6 +18,10 @@ end
 
 get '/about' do 
 	erb :about
+end
+post '/place_order' do
+	@order = Order.create params[:order]
+	erb "Thank you!"
 end
 post '/cart' do 
 	@orders_input = params[:orders]
