@@ -52,7 +52,7 @@
 			      <%if @error && @error.length > 0 then %>
 			          <div class="alert alert-danger"><%=@error%></div>
 			      <% end %>
-			      <%= yield %>
+			      <%= yield %><!--Вот тут вызовется скрипт из order_placed.erb а значит он сработает раньше чем тот что внизу страницы -->
 			</div>
 
 	</div>

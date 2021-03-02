@@ -1,0 +1,12 @@
+<h1>Thank you!</h1>
+<p>
+	Your order has been placed!
+</p>
+<script type="text/javascript"> //скрипт обновления страницы
+	$(function(){
+		window.localStorage.clear();//кнопка корзина обнулится потомучто 
+									//вызывается в yield layout.erb 
+									//раньше чем функция добавления в кнопку
+	});
+
+</script>
