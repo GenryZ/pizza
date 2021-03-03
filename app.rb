@@ -19,6 +19,33 @@ end
 get '/about' do # controller
 	erb :about
 end
+
+get '/admin' do
+  	erb :admin
+end
+
+get '/result' do 
+	@db = get_db
+	@show = db.execute 'select * from orders order by id desc'
+	erb :result
+		
+end
+
+post '/admin' do 
+	@login = params[:login]
+	@pass = params[:password]
+	
+	@show = @db.execute 'select * from orders order by id desc'
+	#if @login == "admin" && @pass == "secret"
+	
+	erb :result
+	#else 
+	#@report = '<p><h1>Access denied</h1></p>'
+	#erb :admin
+	#end
+end
+
+
 post '/place_order' do
 	@order = Order.create params[:order]
 	erb :order_placed

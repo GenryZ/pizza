@@ -1,0 +1,24 @@
+<h1>Your in</h1>
+
+<%= @show %>
+
+<table class="table table-bordered border-primary">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Phone</th>
+			<th>order_input</th>
+			<th>Adsress</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @show.each do |row| %>
+			<tr>
+				<td><%= row['name'] %></td>
+				<td><%= row['phone'] %></td>
+				<td><%= row['order_input'] %></td>
+				<td><%= row['address'] %></td>
+			</tr>
+    	<% end %>
+	</tbody>
+</table>
