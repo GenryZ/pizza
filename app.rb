@@ -25,24 +25,20 @@ get '/admin' do
 end
 
 get '/result' do 
-	@db = get_db
-	@show = db.execute 'select * from orders order by id desc'
+	@orders = Order.order('created_at desc')
 	erb :result
-		
 end
 
 post '/admin' do 
+	@orders = Order.order('created_at desc')
 	@login = params[:login]
 	@pass = params[:password]
-	
-	@show = @db.execute 'select * from orders order by id desc'
-	#if @login == "admin" && @pass == "secret"
-	
+	if @login == "admin" && @pass == "secret"
 	erb :result
-	#else 
-	#@report = '<p><h1>Access denied</h1></p>'
-	#erb :admin
-	#end
+	else 
+	@report = '<p><h1>Access denied</h1></p>'
+	erb :admin
+	end
 end
 
 
